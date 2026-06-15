@@ -1,0 +1,409 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Future Bight College</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(-45deg,#eef4ff,#dbeafe,#bfdbfe,#eef4ff);
+    background-size:400% 400%;
+    animation:bgAnimation 12s ease infinite;
+    color:#333;
+}
+
+@keyframes bgAnimation{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#002855,#00509e);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+header h1{
+    font-size:2.8rem;
+}
+
+/* NAVBAR */
+nav{
+    background:#00509e;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+/* HERO */
+.hero{
+    height:85vh;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:4rem;
+    animation:fadeDown 1s ease;
+}
+
+.hero p{
+    font-size:1.3rem;
+    margin:15px 0;
+    animation:fadeUp 1.2s ease;
+}
+
+.hero a{
+    background:#ff9800;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.hero a:hover{
+    transform:scale(1.1);
+    background:#ff6f00;
+}
+
+@keyframes fadeDown{
+    from{opacity:0;transform:translateY(-50px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(50px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* SECTION */
+section{
+    width:85%;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    transition:.4s;
+    opacity:0;
+    transform:translateY(50px);
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+section:hover{
+    transform:translateY(-8px);
+}
+
+h2{
+    color:#003366;
+    margin-bottom:15px;
+}
+
+/* COURSES */
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#f8fafc;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.card i{
+    font-size:40px;
+    color:#00509e;
+    margin-bottom:10px;
+}
+
+/* FORM */
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    transition:.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    outline:none;
+    border-color:#00509e;
+    box-shadow:0 0 10px rgba(0,80,158,.3);
+}
+
+button{
+    background:linear-gradient(135deg,#00509e,#003366);
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* ACHIEVEMENTS */
+.achievement{
+    background:#f1f5f9;
+    padding:15px;
+    margin:10px 0;
+    border-left:5px solid #00509e;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.achievement:hover{
+    transform:translateX(10px);
+    background:#e0f2fe;
+}
+
+/* CONTACT */
+.contact-box p{
+    margin:10px 0;
+}
+
+/* FOOTER */
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:20px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+nav a{
+    display:inline-block;
+    margin:8px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Future Bright  College</h1>
+    <p>Empowering Education for a Better Future</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#registration">Registration</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+    <h1>Welcome to  Future Bright College</h1>
+    <p>Shape Your Future With Quality Education & Innovation</p>
+    <a href="#registration">Apply Now</a>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Fuure Bright  College is one of the leading educational institutions offering
+        undergraduate and postgraduate programs in Science, Commerce,
+        Management and Technology. We focus on academic excellence,
+        innovation and career growth.
+    </p>
+</section>
+
+<section id="courses">
+    <h2>Our Courses</h2>
+
+    <div class="course-grid">
+
+        <div class="card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>BCA</h3>
+            <p>Computer Applications & IT</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-flask"></i>
+            <h3>Bsc</h3>
+            <p>Science & Research</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-chart-line"></i>
+            <h3>BCom</h3>
+            <p>Commerce & Finance</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-user-tie"></i>
+            <h3>MBA</h3>
+            <p>Business Administration</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="registration">
+    <h2>Student Registration</h2>
+
+    <form>
+        <input type="text" placeholder="Full Name" required>
+
+        <input type="email" placeholder="Email Address" required>
+
+        <input type="tel" placeholder="Mobile Number" required>
+
+        <select required>
+            <option>Select Course</option>
+            <option>BCA</option>
+            <option>BSc</option>
+            <option>BCom</option>
+            <option>MCA</option>
+            <option>MBA</option>
+        </select>
+
+        <textarea rows="4" placeholder="Address"></textarea>
+
+        <button type="submit">Register Now</button>
+    </form>
+</section>
+
+<section id="achievements">
+    <h2>Achievements</h2>
+
+    <div class="achievement">🏆 Ranked Among Top Colleges in the State</div>
+    <div class="achievement">💼 100% Placement Assistance</div>
+    <div class="achievement">🥇 National Sports Championship Winners</div>
+    <div class="achievement">🔬 Research Excellence Awards</div>
+    <div class="achievement">🤝 50+ Industry Collaborations</div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-box">
+        <p><strong>📍 Address:</strong> Future Bright College Campus, Maharashtra, India</p>
+        <p><strong>📞 Phone:</strong> +91 9876543210</p>
+        <p><strong>✉ Email:</strong> info@futurebrightcollege.com</p>
+    </div>
+
+    <br>
+
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<h3>Our Location</h3>
+
+<iframe
+    src="https://maps.google.com/maps?q=Nagpur%20Maharashtra&t=&z=12&ie=UTF8&iwloc=&output=embed"
+    width="100%"
+    height="350"
+    style="border:0;border-radius:10px;margin-top:10px;"
+    allowfullscreen
+    loading="lazy">
+</iframe>
+</iframe>
+
+<footer>
+    © 2026 Future Bright College | All Rights Reserved
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+function revealSections(){
+    sections.forEach(section=>{
+        const top = section.getBoundingClientRect().top;
+        const trigger = window.innerHeight - 100;
+
+        if(top < trigger){
+            section.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealSections);
+revealSections();
+</script>
+
+</body>
+</html>
+```

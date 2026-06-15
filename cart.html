@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - Gaming With Vedant</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background: #050816;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* RGB Background */
+
+      body::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 255, 255, 0.15),
+            transparent
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 0, 255, 0.15),
+            transparent
+          );
+        animation: bgmove 8s infinite alternate;
+        z-index: -1;
+      }
+
+      @keyframes bgmove {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      /* Navbar */
+
+      nav {
+        background: #0f172a;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, cyan, lime);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rgb 3s linear infinite;
+      }
+
+      @keyframes rgb {
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Header */
+
+      .header {
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      .header h1 {
+        font-size: 55px;
+        text-shadow: 0 0 20px cyan;
+      }
+
+      /* Cart Layout */
+
+      .cart-container {
+        padding: 50px 8%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+      }
+
+      .cart-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* Cart Card */
+
+      .cart-card {
+        background: #111827;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      .cart-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px cyan;
+      }
+
+      .cart-card img {
+        width: 150px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
+      .cart-info {
+        flex: 1;
+      }
+
+      .price {
+        color: cyan;
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      /* Quantity */
+
+      .qty {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .qty button {
+        width: 35px;
+        height: 35px;
+        border: none;
+        border-radius: 50%;
+        background: cyan;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .remove {
+        background: red;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      /* Summary */
+
+      .summary {
+        background: #111827;
+        padding: 25px;
+        border-radius: 20px;
+        height: fit-content;
+      }
+
+      .summary h2 {
+        margin-bottom: 20px;
+      }
+
+      .summary p {
+        margin: 15px 0;
+        font-size: 18px;
+      }
+
+      .total {
+        font-size: 28px;
+        color: cyan;
+        font-weight: bold;
+      }
+
+      .checkout {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        background: cyan;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* Footer */
+
+      footer {
+        background: #111827;
+        padding: 30px;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      @media (max-width: 900px) {
+        .cart-container {
+          grid-template-columns: 1fr;
+        }
+
+        .cart-card {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">GAMING WITH VEDANT</div>
+
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+
+    <section class="header">
+      <h1>🛒 Shopping Cart</h1>
+      <p>Your Selected Gaming Products</p>
+    </section>
+
+    <div class="cart-container">
+      <div class="cart-items">
+        <div class="cart-card">
+          <img
+            src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9"
+          />
+
+          <div class="cart-info">
+            <h3>HP Victus Gaming Laptop</h3>
+
+            <p class="price">₹89,499</p>
+
+            <div class="qty">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+
+            <button class="remove">Remove</button>
+          </div>
+        </div>
+
+        <div class="cart-card">
+          <img
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7"
+          />
+
+          <div class="cart-info">
+            <h3>Custom RGB Gaming PC</h3>
+
+            <p class="price">₹74,999</p>
+
+            <div class="qty">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+
+            <button class="remove">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <h2>Order Summary</h2>
+
+        <p>Subtotal: ₹164,498</p>
+
+        <p>GST (18%): ₹29,610</p>
+
+        <hr />
+
+        <p class="total">Total: ₹194,108</p>
+
+        <button
+          class="checkout"
+          onclick="window.location.href = 'checkout.html'"
+        >
+          Proceed To Checkout
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <h3>Gaming With Vedant</h3>
+
+      <p>
+        📍 Gandhi Chowk, Nagpur | 📞 9405790998 | 📧 bharnevedant93@gmail.com
+      </p>
+    </footer>
+  </body>
+</html>

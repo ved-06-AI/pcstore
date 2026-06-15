@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedant Gaming Computers</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #050816;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* Animated Background */
+
+      body::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 255, 255, 0.2),
+            transparent
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 0, 255, 0.2),
+            transparent
+          );
+        animation: bgMove 8s infinite alternate;
+        z-index: -1;
+      }
+
+      @keyframes bgMove {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      /* Navbar */
+
+      nav {
+        position: fixed;
+        width: 100%;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 30px;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, cyan, lime);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rgb 3s linear infinite;
+      }
+
+      @keyframes rgb {
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: cyan;
+      }
+
+      /* Hero */
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1587202372775-e229f172b9d7");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: 70px;
+        animation: glow 2s infinite alternate;
+      }
+
+      .hero p {
+        font-size: 22px;
+        margin-top: 15px;
+      }
+
+      @keyframes glow {
+        from {
+          text-shadow: 0 0 15px red;
+        }
+        to {
+          text-shadow: 0 0 40px cyan;
+        }
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 15px 35px;
+        background: cyan;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+      }
+
+      /* Features */
+
+      .features {
+        padding: 100px 8%;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 50px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .card {
+        background: #111827;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: 0.4s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px cyan;
+      }
+
+      .card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .card h3 {
+        margin-top: 15px;
+      }
+
+      /* Stats */
+
+      .stats {
+        padding: 80px 8%;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        background: #0f172a;
+      }
+
+      .counter {
+        font-size: 50px;
+        font-weight: bold;
+        color: cyan;
+      }
+
+      /* Floating Particles */
+
+      .particle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: cyan;
+        border-radius: 50%;
+        animation: float 8s linear infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(-100px);
+          opacity: 1;
+        }
+      }
+
+      /* Footer */
+
+      footer {
+        padding: 30px;
+        text-align: center;
+        background: #111827;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">GAMING WITH VEDANT</div>
+
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Vedant Gaming Computers</h1>
+
+        <p>Gaming PCs • Laptops • RAM • SSD • Graphics Cards</p>
+
+        <a href="#" class="btn"> Explore Store </a>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 class="title">Top Categories</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9"
+          />
+          <h3>Gaming Laptops</h3>
+          <p>HP Victus • Lenovo LOQ • ASUS ROG</p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7"
+          />
+          <h3>Gaming PCs</h3>
+          <p>Custom Built RGB PCs</p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
+          />
+          <h3>RAM & SSD</h3>
+          <p>Corsair • Crucial • WD</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div>
+        <div class="counter" data-target="500">0</div>
+        <p>Happy Customers</p>
+      </div>
+
+      <div>
+        <div class="counter" data-target="1500">0</div>
+        <p>Products Sold</p>
+      </div>
+
+      <div>
+        <div class="counter" data-target="5">0</div>
+        <p>Years Experience</p>
+      </div>
+    </section>
+
+    <footer>
+      <h3>Vedant Gaming Computers</h3>
+
+      <p>
+        📍 Gandhi Chowk, Nagpur | 📞 9405790998 | 📧 bharnevedant93@gmail.com
+      </p>
+    </footer>
+
+    <script>
+      /* Counter Animation */
+
+      document.querySelectorAll(".counter").forEach((counter) => {
+        const update = () => {
+          const target = +counter.dataset.target;
+          const count = +counter.innerText;
+
+          const inc = target / 100;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(update, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        update();
+      });
+
+      /* Particles */
+
+      for (let i = 0; i < 50; i++) {
+        let p = document.createElement("div");
+
+        p.classList.add("particle");
+
+        p.style.left = Math.random() * 100 + "%";
+
+        p.style.animationDuration = Math.random() * 5 + 5 + "s";
+
+        document.body.appendChild(p);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Gaming With Vedant</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background: #050816;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* RGB Background */
+
+      body::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 255, 255, 0.15),
+            transparent
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 0, 255, 0.15),
+            transparent
+          );
+        animation: bgmove 8s infinite alternate;
+        z-index: -1;
+      }
+
+      @keyframes bgmove {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      /* Navbar */
+
+      nav {
+        position: sticky;
+        top: 0;
+        background: #0f172a;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, cyan, lime);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rgb 3s linear infinite;
+      }
+
+      @keyframes rgb {
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Hero */
+
+      .hero {
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+        text-shadow: 0 0 20px cyan;
+      }
+
+      /* Contact Section */
+
+      .contact {
+        padding: 80px 8%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .form-box,
+      .info-box {
+        background: #111827;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+      }
+
+      button {
+        padding: 15px 30px;
+        background: cyan;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      .info-box h3 {
+        margin-bottom: 15px;
+        color: cyan;
+      }
+
+      .info-box p {
+        margin: 10px 0;
+      }
+
+      /* Social */
+
+      .social {
+        margin-top: 20px;
+      }
+
+      .social a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 30px;
+        color: white;
+        transition: 0.3s;
+      }
+
+      .social a:hover {
+        color: cyan;
+        transform: translateY(-5px);
+      }
+
+      /* Map */
+
+      .map {
+        padding: 50px 8%;
+      }
+
+      .map iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        border-radius: 20px;
+      }
+
+      /* WhatsApp */
+
+      .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 65px;
+        height: 65px;
+        background: #25d366;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 0 20px #25d366;
+      }
+
+      /* Footer */
+
+      footer {
+        background: #111827;
+        padding: 30px;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      @media (max-width: 768px) {
+        .contact {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">GAMING WITH VEDANT</div>
+
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Contact Us</h1>
+        <p>We're Here To Help You</p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="form-box">
+        <h2>Send Message</h2>
+
+        <form>
+          <input type="text" placeholder="Your Name" required />
+
+          <input type="email" placeholder="Your Email" required />
+
+          <input type="tel" placeholder="Phone Number" />
+
+          <textarea rows="6" placeholder="Your Message"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="info-box">
+        <h3>Shop Information</h3>
+
+        <p>📍 Gandhi Chowk, Nagpur</p>
+
+        <p>📞 9405790998</p>
+
+        <p>📧 bharnevedant93@gmail.com</p>
+
+        <p>🕒 Monday - Saturday : 10 AM - 8 PM</p>
+
+        <p>🎮 Gaming PCs, Laptops, RAM, SSD, GPU & Accessories</p>
+
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+
+          <a href="#"><i class="fab fa-instagram"></i></a>
+
+          <a href="#"><i class="fab fa-youtube"></i></a>
+
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="map">
+      <iframe
+        src="https://maps.google.com/maps?q=Gandhi%20Chowk%20Nagpur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      >
+      </iframe>
+    </section>
+
+    <a class="whatsapp" href="https://wa.me/919405790998" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+      <h3>Gaming With Vedant</h3>
+
+      <p>
+        📍 Gandhi Chowk, Nagpur | 📞 9405790998 | 📧 bharnevedant93@gmail.com
+      </p>
+
+      <p>© 2026 Gaming With Vedant. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

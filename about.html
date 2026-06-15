@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Gaming With Vedant</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background: #050816;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* RGB Background */
+
+      body::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 255, 255, 0.15),
+            transparent
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 0, 255, 0.15),
+            transparent
+          );
+        animation: bgmove 8s infinite alternate;
+        z-index: -1;
+      }
+
+      @keyframes bgmove {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      /* Navbar */
+
+      nav {
+        position: sticky;
+        top: 0;
+        background: #0f172a;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, cyan, lime);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rgb 3s linear infinite;
+      }
+
+      @keyframes rgb {
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Hero */
+
+      .hero {
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+        text-shadow: 0 0 25px cyan;
+      }
+
+      /* About */
+
+      .about {
+        padding: 100px 8%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 0 30px cyan;
+      }
+
+      .about h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      .about p {
+        line-height: 1.8;
+      }
+
+      /* Features */
+
+      .features {
+        padding: 80px 8%;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 50px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .card {
+        background: #111827;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        transition: 0.4s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px cyan;
+      }
+
+      .card i {
+        font-size: 50px;
+        color: cyan;
+        margin-bottom: 15px;
+      }
+
+      /* Stats */
+
+      .stats {
+        padding: 80px 8%;
+        display: flex;
+        justify-content: space-around;
+        background: #111827;
+        text-align: center;
+      }
+
+      .counter {
+        font-size: 50px;
+        font-weight: bold;
+        color: cyan;
+      }
+
+      /* Reviews */
+
+      .reviews {
+        padding: 80px 8%;
+      }
+
+      .review {
+        background: #111827;
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      /* Footer */
+
+      footer {
+        padding: 30px;
+        text-align: center;
+        background: #111827;
+        margin-top: 50px;
+      }
+
+      @media (max-width: 768px) {
+        .about {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          flex-direction: column;
+          gap: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">GAMING WITH VEDANT</div>
+
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>About Us</h1>
+        <p>Your Trusted Gaming Partner</p>
+      </div>
+    </section>
+
+    <section class="about">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+
+      <div>
+        <h2>Gaming With Vedant</h2>
+
+        <p>
+          Gaming With Vedant is a premium gaming and computer store located at
+          Gandhi Chowk, Nagpur. We provide Gaming PCs, Laptops, Graphics Cards,
+          RAM, SSDs, Monitors and Accessories from leading brands. Our goal is
+          to help gamers, creators and students build the perfect setup at the
+          best prices.
+        </p>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 class="title">Why Choose Us</h2>
+
+      <div class="grid">
+        <div class="card">
+          <i class="fas fa-desktop"></i>
+          <h3>Gaming PCs</h3>
+          <p>Custom RGB Gaming Builds.</p>
+        </div>
+
+        <div class="card">
+          <i class="fas fa-laptop"></i>
+          <h3>Latest Laptops</h3>
+          <p>HP, Lenovo, ASUS & More.</p>
+        </div>
+
+        <div class="card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Warranty Support</h3>
+          <p>Genuine Products Only.</p>
+        </div>
+
+        <div class="card">
+          <i class="fas fa-headset"></i>
+          <h3>24/7 Support</h3>
+          <p>Friendly Customer Service.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div>
+        <div class="counter" data-target="500">0</div>
+        <p>Happy Customers</p>
+      </div>
+
+      <div>
+        <div class="counter" data-target="1500">0</div>
+        <p>Products Sold</p>
+      </div>
+
+      <div>
+        <div class="counter" data-target="5">0</div>
+        <p>Years Experience</p>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2 class="title">Customer Reviews</h2>
+
+      <div class="review">
+        ⭐⭐⭐⭐⭐
+        <p>Best gaming shop in Nagpur. Great prices and support.</p>
+      </div>
+
+      <div class="review">
+        ⭐⭐⭐⭐⭐
+        <p>Built my custom RGB PC. Amazing service.</p>
+      </div>
+
+      <div class="review">
+        ⭐⭐⭐⭐⭐
+        <p>Fast delivery and genuine products.</p>
+      </div>
+    </section>
+
+    <footer>
+      <h3>Gaming With Vedant</h3>
+
+      <p>
+        📍 Gandhi Chowk, Nagpur | 📞 9405790998 | 📧 bharnevedant93@gmail.com
+      </p>
+    </footer>
+
+    <script>
+      /* Counter Animation */
+
+      document.querySelectorAll(".counter").forEach((counter) => {
+        const update = () => {
+          const target = +counter.dataset.target;
+          const count = +counter.innerText;
+
+          const inc = target / 100;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(update, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        update();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaming With Vedant - Store</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background: #050816;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* RGB Background */
+
+      body::before {
+        content: "";
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 255, 255, 0.15),
+            transparent
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 0, 255, 0.15),
+            transparent
+          );
+        animation: bgmove 8s infinite alternate;
+        z-index: -1;
+      }
+
+      @keyframes bgmove {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      /* Navbar */
+
+      nav {
+        position: sticky;
+        top: 0;
+        background: #0f172a;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, cyan, lime);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rgb 3s linear infinite;
+      }
+
+      @keyframes rgb {
+        100% {
+          filter: hue-rotate(360deg);
+        }
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Banner */
+
+      .banner {
+        padding: 120px 20px;
+        text-align: center;
+      }
+
+      .banner h1 {
+        font-size: 60px;
+        text-shadow: 0 0 20px cyan;
+      }
+
+      .banner p {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+
+      /* Search */
+
+      .search-box {
+        width: 80%;
+        max-width: 600px;
+        margin: 20px auto;
+        display: block;
+        padding: 15px;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+
+      /* Products */
+
+      .products {
+        padding: 60px 8%;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .card {
+        background: #111827;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: 0.4s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 25px cyan;
+      }
+
+      .card img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .content h3 {
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 22px;
+        color: cyan;
+        font-weight: bold;
+      }
+
+      button {
+        margin-top: 15px;
+        padding: 12px 25px;
+        border: none;
+        background: cyan;
+        color: black;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      /* Cart */
+
+      .cart {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #111827;
+        padding: 15px 20px;
+        border-radius: 10px;
+        font-size: 18px;
+        box-shadow: 0 0 15px cyan;
+      }
+
+      /* Footer */
+
+      footer {
+        padding: 30px;
+        text-align: center;
+        background: #111827;
+        margin-top: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">GAMING WITH VEDANT</div>
+
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+
+    <section class="banner">
+      <h1>Gaming Store</h1>
+      <p>Latest PCs, Laptops, RAM, SSD & GPUs</p>
+
+      <input
+        type="text"
+        id="search"
+        class="search-box"
+        placeholder="Search Products..."
+      />
+    </section>
+
+    <section class="products">
+      <div class="grid" id="productGrid">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9"
+          />
+          <div class="content">
+            <h3>HP Victus Gaming Laptop</h3>
+            <p class="price">₹89,499</p>
+            <button onclick="addCart()">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8"
+          />
+          <div class="content">
+            <h3>Lenovo LOQ Gaming Laptop</h3>
+            <p class="price">₹63,990</p>
+            <button onclick="addCart()">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7"
+          />
+          <div class="content">
+            <h3>Custom RGB Gaming PC</h3>
+            <p class="price">₹74,999</p>
+            <button onclick="addCart()">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef"
+          />
+          <div class="content">
+            <h3>Corsair DDR5 RAM</h3>
+            <p class="price">₹20,300</p>
+            <button onclick="addCart()">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1591488320449-011701bb6704"
+          />
+          <div class="content">
+            <h3>Crucial P3 Plus SSD</h3>
+            <p class="price">₹6,999</p>
+            <button onclick="addCart()">Add To Cart</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1624705002806-5d72df19c3c4"
+          />
+          <div class="content">
+            <h3>RTX 5060 Graphics Card</h3>
+            <p class="price">₹38,750</p>
+            <button onclick="addCart()">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cart">🛒 Cart: <span id="cartCount">0</span></div>
+
+    <footer>
+      <h3>Gaming With Vedant</h3>
+
+      <p>
+        📍 Gandhi Chowk, Nagpur | 📞 9405790998 | 📧 bharnevedant93@gmail.com
+      </p>
+    </footer>
+
+    <script>
+      let cart = 0;
+
+      function addCart() {
+        cart++;
+
+        document.getElementById("cartCount").innerText = cart;
+      }
+
+      /* Search */
+
+      document.getElementById("search").addEventListener("keyup", function () {
+        let value = this.value.toLowerCase();
+
+        let cards = document.querySelectorAll(".card");
+
+        cards.forEach((card) => {
+          let text = card.innerText.toLowerCase();
+
+          card.style.display = text.includes(value) ? "block" : "none";
+        });
+      });
+    </script>
+  </body>
+</html>
